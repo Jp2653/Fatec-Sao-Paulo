@@ -1,0 +1,88 @@
+FATEC SP
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fatec São Paulo </title> <!--https://www.fatecsp.br/-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #003b5c;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FATEC São Paulo</h1>
+</header>
+
+<button id="showPopup">Mostrar Carteirinha</button>
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <p>Carteirinha Válida até 12/2025</p>
+    <p>Estudante: Carla Monique Angelo de Aguiar</p>
+    <button id="closePopup">Fechar</button>
+</div>
+
+<script>
+    const showPopup = document.getElementById('showPopup');
+    const closePopup = document.getElementById('closePopup');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    showPopup.onclick = function() {
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+    };
+
+    closePopup.onclick = function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    };
+
+    overlay.onclick = function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    };
+</script>
+
+</body>
+</html>
